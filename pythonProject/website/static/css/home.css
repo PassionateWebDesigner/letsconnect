@@ -1,0 +1,302 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "EB Garamond";
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    overflow-x: hidden;
+}
+.logo{
+    border-radius: 50%;
+}
+ul li a{
+    color: black;
+    font-weight: bold;
+}
+ul li a:hover{
+    color: #6517dd;
+}
+.nav-item{
+    padding-left:30px;
+    font-size:22px;
+}
+.login{
+    /*margin-left: 500px;*/
+    width: 100px;
+    font-size:22px;
+    color: white;
+}
+.register{
+    margin-left: 450px;
+    width: 100px;
+    font-size:22px;
+    color: white;
+}
+.login:hover{
+    background: aliceblue;
+    border:1px solid aliceblue ;
+    color: blue;
+}
+.register:hover{
+    background: blue;
+    border:1px solid blue;
+    color: white;
+}
+.carousel-item {
+    height: 65vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.meet{
+    margin-left: 450px;
+}
+.meet .a2{
+    padding: 15px;
+    width: 250px;
+    font-size:20px;
+    font-weight:bold;
+}
+.meet .a2:hover{
+    background: blue;
+    color: white;
+}
+.meet .a1{
+    padding: 15px;
+    width: 250px;
+    font-size:20px;
+    font-weight:bold;
+    margin-left: 30px;
+}
+.meet .a1:hover{
+    background: white;
+    color: green;
+}
+.p{
+    display: inline-block;
+    margin-left: 150px;
+    margin-top: 100px;
+    font-size:20px;
+}
+.img1{
+    margin-top: 100px;
+}
+.p1{
+    margin-top: 50px;
+    display: inline-block;
+    font-size:20px;
+    margin-left: -20px;
+}
+.p2{
+    font-size: 20px;
+}
+.img2{
+    width:504px;
+    height: 304px;
+}
+.img1{
+    margin-top: -180px;
+    margin-left: 300px;
+}
+
+/*FOOTER*/
+
+.footer-big {
+    padding:25px 0 5px 0;
+}
+.footer-big .footer-widget {
+    margin-bottom:20px;
+}
+.footer--light {
+    background: black;
+}
+.footer-big .footer-menu ul li a,.footer-big p,.footer-big ul li {
+    color:#898b96;
+}
+.footer-menu {
+    padding-left:48px;
+}
+.footer-menu ul li a {
+    font-size:25px;
+    line-height:32px;
+    -webkit-transition:.3s;
+    -o-transition:.3s;
+    transition:.3s;
+    text-decoration: none;
+}
+.footer-menu ul li a:hover {
+    color:#5867dd;
+}
+.footer-menu--1 {
+    width:100%;
+}
+.footer-widget-title {
+    line-height:42px;
+    margin-bottom:10px;
+    font-size:18px;
+}
+.widget-about img {
+    display:block;
+    margin-bottom:30px;
+}
+.head{
+    color: white;
+    font-size: 27px;
+}
+.social-icons{
+    font-size:40px;
+    color: coral;
+}
+.social-icons a{
+    text-decoration: none;
+    color: coral;
+}
+.fa-phone {
+    color: white;
+    padding-top: 20px;
+    font-size:20px;
+} 
+.fa-envelope{
+    color: white;
+    padding-top: 20px;
+    font-size: 20px;
+}
+h3{
+    color: white;
+}
+.fa-phone a{
+    text-decoration: none;
+    padding-top: 20px;
+    font-size:25px;
+    color:#898b96;
+    font-weight: bold;
+}
+.fa-envelope a{
+    text-decoration: none;
+    padding-top: 20px;
+    font-size: 22px;
+    color: #898b96;
+    font-weight: bold;
+}
+.fade-in{
+    opacity: 0;
+    transition: opacity 250ms ease-in;
+}
+.fade-in.appear{
+    opacity: 1;
+}
+.from-left{
+    grid-column: 2/3;
+    transform:translateX(-50%);
+}
+.from-right{
+    grid-column:3/4;
+    transform:translateX(50%);
+}
+.from-left,
+.from-right{
+    transition:transform 400ms ease-in;
+}
+.from-left.appear,
+.from-right.appear{
+    transform:translateX(0);
+}
+@media only screen and (min-width:626px) and (max-width:1025px){
+    .nav-item{
+        padding-left: 20px;
+        font-size:20px;
+    }
+    .login{
+        margin: 0;
+    }
+    .register{
+        margin: 0;
+    }
+    .meet{
+        margin-left: 250px;
+    }
+    .meet .a2{
+        width: 180px;
+        font-size:18px;
+    }
+    .meet .a1{
+        margin-left: 0;
+        width: 180px;
+        font-size:18px;
+        margin-top: 20px;
+    }
+    .head1{
+        margin-top: 20px;
+    }
+    .p1{
+        margin-top: 20px;
+        font-size: 17px;
+    }
+    .p{
+        margin: 0;
+    }
+    .p2{
+        margin-top: 20px;
+        font-size: 17px;
+    }
+    .img1{
+        margin: 0;
+    }
+    .social-icons{
+        padding-top: 10px;
+    }
+}
+@media only screen and (min-width:679px) and (max-width:768px){
+    .meet{
+        margin-left: 180px;
+    }
+}
+@media(max-width:768px){
+    .nav-item{
+        padding: 0;
+    }
+    .login{
+        margin: 0;
+    }
+    .register{
+        margin: 0;
+    }
+    .meet{
+        margin-left: 80px;
+    }
+    .meet .a2{
+        width: 180px;
+        font-size:18px;
+    }
+    .meet .a1{
+        margin-left: 0;
+        width: 180px;
+        font-size:18px;
+        margin-top: 20px;
+    }
+    .head1{
+        margin-top: 20px;
+    }
+    .p1{
+        margin-top: 20px;
+        font-size: 17px;
+    }
+    .p{
+        margin: 0;
+    }
+    .p2{
+        margin-top: 20px;
+        font-size: 17px;
+    }
+    .img1{
+        margin: 0;
+    }
+    .social-icons{
+        padding-top: 10px;
+    }
+}

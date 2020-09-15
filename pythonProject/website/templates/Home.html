@@ -1,0 +1,225 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href="https://fonts.googleapis.com/css?family=EB Garamond" >
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <title>Let's Connect</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm">
+      <a href="{% url 'home' %}" class="navbar-brand"><img src="{% static 'images/Lets.png' %}" alt="" width="150" height="150" class="img-fluid logo"></a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+        <span class="fa fa-bars " style="float: right;"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapse_target">
+        <ul class="navbar-nav">
+            {% if user.is_authenticated %}
+             <li class="nav-item">
+              <a href="{% url 'hom3' %}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+            <a href="{% url 'aboutus' %}" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'faq' %}" class="nav-link">FAQ's</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'contactus' %}" class="nav-link">Contact Us</a>
+          </li>
+            <li class="nav-item" id="user">
+                <a href="{% url 'profilephotoupload' %}" role="button" class="btn btn-primary text-white" class="prof"><span class="fa fa-user"></span> View Profile</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'logout' %}" role="button" class="btn btn-warning text-white logout"><span class="fa fa-sign-out"></span>Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+            <a href="{% url 'home' %}" class="nav-link">Getting Started</a>
+             </li>
+          <li class="nav-item">
+            <a href="{% url 'aboutus' %}" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'faq' %}" class="nav-link">FAQ's</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'contactus' %}" class="nav-link">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'register' %}" class="btn btn-warning register">Register</a>
+          </li>
+          <br>
+          <li class="nav-item">
+            <a href="{% url 'login' %}" class="btn btn-success login">Login</a>
+          </li>
+            {% endif %}
+        </ul>
+      </div>
+    </nav>
+    <br>
+    <div class="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <!-- Slide One - Set the background image for this slide in the line below -->
+              <div class="carousel-item active" style="background-image: url({% static 'images/schl.jpg' %})">
+                <div class="carousel-caption d-none d-md-block">
+                  <h3 class="display-4" style="color: orange;text-shadow: 2px 2px black;">Connecting With Students And Teachers</h3>
+                  <p class="lead" style="color: orange;text-shadow: 1px 1px black;">Education IS The Most Important Part Of Every Children Life,Fulfill It Through <b>Let's Connect</b> <b></b></p>
+                </div>
+              </div>
+              <!-- Slide Two - Set the background image for this slide in the line below -->
+              <div class="carousel-item" style="background-image: url({% static 'images/grp2.jpg' %})">
+                <div class="carousel-caption d-none d-md-block">
+                  <h3 class="display-4" style="color: green;text-shadow: 2px 2px white;">Connecting With The Team Mates And Clients</h3>
+                  <p class="lead" style="color: green;text-shadow: 1px 1px black;">Along With All ,Our Job Is Also A Very Important Thing,Connect With Your CLients Using <b>Let's Connect</b></p>
+                </div>
+              </div>
+              <!-- Slide Three - Set the background image for this slide in the line below -->
+              <div class="carousel-item" style="background-image: url({% static 'images/fr1.jpg' %})">
+                <div class="carousel-caption d-none d-md-block">
+                  <h3 class="display-4">Connecting With Friends And Family</h3>
+                  <p class="lead">We Can't Live Without The People Who Make Us Happy,Connect With Them Using <b>Let's Connect</b></p>
+                </div>
+              </div>
+
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <br><br>
+    <div class="meet">
+      <a href="#" class="btn btn-primary  a2 slide-in from-left" role="button"><i class="fa fa-arrow-right" aria-hidden="true"></i> Create A Connection</a>
+      <a href="#" class="btn btn-success  a1 slide-in from-right" role="button"><i class="fa fa-arrow-right" aria-hidden="true"></i>Join A Connection</a>
+    </div>
+    <br><br>
+    <section>
+      <div class="container">
+        <div class="row fade-in">
+          <div class="col-sm-4 float-right">
+            <img src="{% static 'images/laptop-meeting.png' %}" alt="" class="img2 img-fluid">
+          </div>
+          <div class="col-sm-8">
+            <div class="float-right">
+              <p class="p1 ml-1">This is the next version of us,which is coming soon,for now we<br>Made a connection one to one,like one member can make a call <br> and can share room code to the person to join so by this they both <br>can communicate through video call</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-8 slide-in from-left">
+            <div class="float-right">
+              <p class="p1 ml-1">After Creating the Account in website you will be loged into your account<br>after that you can create a connection ,and share your room id to connect the another <br> person as well to join, so by this the persons both <br> can communicate through video call and chat</p>
+            </div>
+          </div>
+          <div class="col-sm-4 float-right slide-in float-right">
+            <img src="{% static 'images/Create A Connection (1).png' %}" alt="" class="img2 img-fluid img-responsive">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4 float-right from-left slide-in">
+            <img src="{% static 'images/Add a heading (1).png' %}" alt="" class="img2 img-fluid">
+          </div>
+          <div class="col-sm-8">
+            <div class="float-right slide-in from-right">
+              <p class="p1 ml-1">In home page there will be  a button called join a connection <br> by clicking on it you will be redirected to a page <br> after entering the code of your room you will be joined into a room where you <br>can communicate through video and chat</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br><br><br>
+
+     <footer class="footer-area footer--light">
+      <div class="footer-big">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+              <div class="footer-widget">
+                <div class="widget-about">
+                  <a href="home.html"><img src="{% static 'images/Lets.png' %}" alt="" class="img-fluid rounded-circle" width="230" height="230"></a>
+                  <p>Let's Connect</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="footer-widget">
+                <div class="footer-menu footer-menu--1">
+                  <h4 class="head">Quick Links</h4>
+                  <br>
+                  <ul>
+                    <li><a href="{% url 'home' %}">Getting Started</a></li><br>
+                    <li><a href="{% url 'aboutus' %}">About Us</a></li><br>
+                    <li><a href="{% url 'faq' %}">FAQ's</a></li><br>
+                    <li><a href="{% url 'contactus' %}">Contact Us</a></li><br>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <h3 class="head">Contact Us on:</h3>
+                <span class="fa fa-phone">&nbsp;<a href="tel: 9154866484" style="text-decoration:none;"><span id="a">Customer Service</span></a></span><br>
+              <span class="fa fa-envelope"> <a href="mailto:quicklearner838@gmail.com" style=text-decoration:none;><span id="a">quicklearner838@gmail.com</a></span>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="social-icons">
+                <h3 class="head">Follow Us </h3>
+                <a href="#"><span class="fa fa-instagram"></span></a>&nbsp;
+                <a href="#"><span class="fa fa-linkedin"></span></a>&nbsp;
+                <a href="#"><span class="fa fa-facebook"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const faders = document.querySelectorAll(".fade-in");
+      const sliders = document.querySelectorAll(".slide-in")
+      const appearOptions = {
+        threshold : 0,
+        rootMargin : "0px 0px -250px 0px"
+      };
+      const appearonscroll=new IntersectionObserver(function
+      (entries,appearonscroll){
+        entries.forEach(entry =>{
+          if(!entry.isIntersecting){
+            return;
+          }else{
+            entry.target.classList.add("appear");
+            appearonscroll.unobserve(entry.target);
+          }
+        })
+      },appearOptions);
+
+      faders.forEach(fader => {
+        appearonscroll.observe(fader);
+      })
+
+      sliders.forEach(slider =>{
+        appearonscroll.observe(slider);
+      })
+    </script>
+</body>
+</html>
+
+
+

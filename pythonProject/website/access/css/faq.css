@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "EB Garamond";
+    text-decoration: none;
+    list-style: none;
+}
+.logo{
+    border-radius: 50%;
+}
+ul li a{
+    color: black;
+    font-weight: bold;
+}
+ul li a:hover{
+    color: #6517dd;
+}
+.nav-item{
+    padding-left:30px;
+    font-size:22px;
+}
+.login{
+    /*margin-left: 500px;*/
+    width: 100px;
+    font-size:22px;
+    color: white;
+}
+.register{
+    margin-left: 450px;
+    width: 100px;
+    font-size:22px;
+    color: white;
+}
+.login:hover{
+    background: aliceblue;
+    border:1px solid aliceblue ;
+    color: blue;
+}
+.register:hover{
+    background: blue;
+    border:1px solid blue;
+    color: white;
+}
+.footer-big {
+    padding:25px 0 5px 0;
+}
+.footer-big .footer-widget {
+    margin-bottom:20px;
+}
+.footer--light {
+    background: #000000;
+}
+.footer-big .footer-menu ul li a,.footer-big p,.footer-big ul li {
+    color:#898b96;
+}
+.footer-menu {
+    padding-left:48px;
+}
+.footer-menu ul li a {
+    font-size:25px;
+    line-height:32px;
+    -webkit-transition:.3s;
+    -o-transition:.3s;
+    transition:.3s;
+    text-decoration: none;
+}
+.footer-menu ul li a:hover {
+    color:#5867dd;
+}
+.footer-menu--1 {
+    width:100%;
+}
+.footer-widget-title {
+    line-height:42px;
+    margin-bottom:10px;
+    font-size:18px;
+}
+.widget-about img {
+    display:block;
+    margin-bottom:30px;
+}
+.head{
+    color: white;
+    font-size: 27px;
+}
+.head1{
+    color: white;
+    font-size: 27px;
+    margin-left: 30px;
+}
+.he1{
+    font-size: 20px;
+    color: white;
+}
+.social-icons{
+    margin-top: 60px;
+    margin-left: 30px;
+    font-size:40px;
+    color: coral;
+}
+
+@media(max-width:852px){
+    .nav-item{
+        padding: 0;
+    }
+    .login{
+        margin: 0;
+    }
+    .register{
+        margin: 0;
+    }
+    .bt{
+        margin-top: 10px;
+    }
+}
+@media(max-width:768px){
+    .nav-item{
+        padding: 0;
+    }
+    .login{
+        margin: 0;
+    }
+    .register{
+        margin: 0;
+    }
+    .bt{
+        margin-top: 10px;
+    }
+}

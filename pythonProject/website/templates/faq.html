@@ -1,0 +1,141 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'css/faq.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm">
+        <a href="{% url 'home' %}" class="navbar-brand"><img src="{% static 'images/Lets.png' %}" alt="" width="150" height="150" class="img-fluid logo"></a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+          <span class="fa fa-bars " style="float: right;"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapse_target">
+        <ul class="navbar-nav">
+            {% if user.is_authenticated %}
+             <li class="nav-item">
+              <a href="{% url 'hom3' %}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+            <a href="{% url 'aboutus' %}" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'faq' %}" class="nav-link">FAQ's</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'contactus' %}" class="nav-link">Contact Us</a>
+          </li>
+            <li class="nav-item" id="user">
+                <a href="{% url 'profilephotoupload' %}" role="button" class="btn btn-primary text-white" class="prof"><span class="fa fa-user"></span> View Profile</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'logout' %}" role="button" class="btn btn-warning text-white logout"><span class="fa fa-sign-out"></span> Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+            <a href="{% url 'home' %}" class="nav-link">Getting Started</a>
+             </li>
+          <li class="nav-item">
+            <a href="{% url 'aboutus' %}" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'faq' %}" class="nav-link">FAQ's</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'contactus' %}" class="nav-link">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'register' %}" class="btn btn-warning register">Register</a>
+          </li>
+          <br>
+          <li class="nav-item">
+            <a href="{% url 'login' %}" class="btn btn-success login">Login</a>
+          </li>
+            {% endif %}
+        </ul>
+      </div>
+      </nav>
+    <h2 class="text-center">To Know How To Use The Website Check Here</h2>
+    <br>
+    <div class="container text-center">
+        <button type="button" class="btn btn-primary btn-lg float-left" data-toggle="collapse" data-target="#demo"><img src="{% static 'images/HowToLogins.png' %}" alt="" width="120" style="border-radius: 100%;">
+          <div class="login">
+            <h4>Click me to know</h4>
+          </div>
+        </button>
+        <div id="demo" class="collapse">
+            <h4 class="text-center">First Create an Account and then login into the website using your registered username & password, then you can available to create meetings or chat with the person you wished for!!</h4>
+        </div>
+        <br><br>
+        <button type="button" class="btn btn-warning btn-lg float-right bt" data-toggle="collapse" data-target="#demo1"><img src="{% static 'images/HowToLogin.png' %}" alt="" width="120" style="border-radius: 100%;">
+          <div class="create">
+            <h4>Click me to know</h4>
+          </div>
+        </button>
+        <div id="demo1" class="collapse">
+            <h4 class="text-center">At The Home Page Of Our Website You Can able to see the button of Register,in that you have to create your Account after that you can login!!</h4>
+        </div>
+        <br><br><br>
+        <button type="button" class="btn btn-success btn-lg bt" data-toggle="collapse" data-target="#demo2"><img src="{% static 'images/HowTocreate.png' %}" alt="" width="120" style="border-radius:100%;">
+          <div class="createmeet">
+            <h4>Click me to know</h4>
+          </div>
+        </button>
+        <div id="demo2" class="collapse">
+            <h4 class="text-center">At The Home Page Of Our Website You Can able to see the button of Join A connection,if you've the code you can join into it otherwise you can create a room</h4>
+        </div>
+    </div> 
+    <br><br>
+     <footer class="footer-area footer--light">
+      <div class="footer-big">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+              <div class="footer-widget">
+                <div class="widget-about">
+                  <a href="home.html"><img src="{% static 'images/Lets.png' %}" alt="" class="img-fluid rounded-circle" width="230" height="230"></a>
+                  <p>Let's Connect</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="footer-widget">
+                <div class="footer-menu footer-menu--1">
+                  <h4 class="head">Quick Links</h4>
+                  <br>
+                  <ul>
+                    <li><a href="{% url 'home' %}">Getting Started</a></li><br>
+                    <li><a href="{% url 'aboutus' %}">About Us</a></li><br>
+                    <li><a href="{% url 'faq' %}">FAQ's</a></li><br>
+                    <li><a href="{% url 'contactus' %}">Contact Us</a></li><br>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <h3 class="head">Contact Us on:</h3>
+                <span class="fa fa-phone">&nbsp;<a href="tel: 9154866484" style="text-decoration:none;"><span id="a">Customer Service</span></a></span><br>
+              <span class="fa fa-envelope"> <a href="mailto:quicklearner838@gmail.com" style=text-decoration:none;><span id="a">quicklearner838@gmail.com</a></span>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="social-icons">
+                <h3 class="head">Follow Us </h3>
+                <a><span class="fa fa-instagram"></span></a>&nbsp;
+                <a><span class="fa fa-linkedin"></span></a>&nbsp;
+                <a><span class="fa fa-facebook"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>

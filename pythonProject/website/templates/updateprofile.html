@@ -1,0 +1,70 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/updateprofile.css' %}">
+    <title>Update Profile</title>
+</head>
+<body>
+    <h2 class="text-center">Update Your Profile</h2>
+    <div class="col-xs-12 col-md-8 col-sm-8">
+        <form action="{% url 'updateprofile' %}" class="center" method="POST">
+            {% if message %}
+                <div class="alert {{status}}" role="alert">
+                    {{message}}
+                </div>
+                {% endif %}
+            {% csrf_token %}
+           <table class="table table-responsive-lg table-borderless table-bordered table-light">
+                <tr>
+                    <th><label for="username"> User Name  </label></th>
+                    <td><input type="text" placeholder="{{data.username}}" name="username" required autofocus class="input"></td>
+                </tr>
+                <tr>
+                    <th><label for="cp">Change Password</label></th>
+                    <td><input type="radio"> yes&nbsp;&nbsp;&nbsp;<input type="radio" name="button"> No</td>
+                </tr>
+                <tr>
+                    <th> <label for="pwd"> Current Password  </label></th>
+                    <td> <input type="password" placeholder="{{data.password}}" required name="currentpassword" autofocus class="input"></td>
+                </tr>
+               <tr>
+                    <th> <label for="pwd"> New Password  </label></th>
+                    <td> <input type="password" placeholder="{{data.password}}" required name="newpassword" autofocus class="input"></td>
+                </tr>
+               <tr>
+                    <th> <label for="pwd"> Confirm Password  </label></th>
+                    <td> <input type="password" placeholder="{{data.password}}" required name="confirmpassword" autofocus class="input"></td>
+                </tr>
+                <tr>
+                    <th><label for="email"> Email  </label></th>
+                    <td><input type="email" placeholder="{{user.email}}" name="email" autofocus class="input"></td>
+                </tr>
+                <tr>
+                    <th><label for="phone"> Phone Number  </label></th>
+                    <td> <input type="tel" placeholder="{{data.phone_number}}"  name="phone_number" autofocus class="input"></td>
+                </tr>
+                <tr>
+                    <th><label for="address"> Address </label></th>
+                    <td><input type="text" placeholder= "{{data.address}}"  name="address" autofocus class="input"></td>
+                </tr>
+                <tr>
+                    <th><label for="Bio">About You</label></th>
+                    <td><textarea name="bio" id="bio" cols="20" rows="3" placeholder="{{data.About_you}}" name="bio" class="text"></textarea></td>
+                </tr>
+                <tr>
+                    <td><a href="{% url 'updateprofile' %}" role="button" type="submit" class="btn btn-success"> Update</a></td>
+                    <td><a href="{% url 'hom3' %}" role="button" class="btn btn-info">Back To Home</a></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <img src="{% static 'images/cute-boy-standing-position-showing-thumb_96037-450.jpg' %}" alt="" id="img2">
+</body>
+</html>

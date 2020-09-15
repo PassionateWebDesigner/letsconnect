@@ -1,0 +1,153 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>login</title>
+    <style>
+        body{
+            background-image: url({% static 'images/meet.jpg' %});
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position:center;
+            background-attachment: fixed;
+            width: 1200px;
+            height: 600px;
+        }
+        .login-box{
+            width: 420px;
+            height: 450px;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-54%,-50%);
+            box-sizing: border-box;
+        }
+        .avatar{
+            width:100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            top: -50px;
+            left: calc(50%-50px);
+        }
+        .nam1{
+            margin-top: 15px;
+            margin-right: 50px;
+            margin-left: 50px;
+        }
+        .nam2{
+            width: 220px;
+            margin-top: -30px;
+            margin-left: 160px;
+        }
+        .nm3{
+            margin-left: 50px;
+        }
+        .sub{
+            width: 120px;
+            margin-left: 150px;
+        }
+        .sub:hover{
+            background:white;
+            color:blue;
+            font-weight: bold;
+        }
+        h1{
+            margin-left: 45px;
+            margin-top: 50px;
+            color: white;
+        }
+        @media (max-width: 768px){
+            .login-box{
+                width: 320px;
+                height: 420px;
+                margin-left: 5px;
+            }
+            .avatar{
+                width: 50px;
+                height: 50px;
+                top: -30px;
+            }
+            body{
+                width: 320px;
+                height: 679px;
+            }
+            .nam1{
+                margin-top:30px;
+                margin-left: 20px;
+            }
+            .nam2{
+                width: 140px;
+            }
+            .nm3{
+                margin-left: 20px;
+            }
+            h1{
+                font-size:28px;
+            }
+            .sub{
+                margin-left: 100px;
+            }
+            .subs{
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <img src="{% static 'images/428-4287240_no-avatar-user-circle-icon-png.png' %}" alt="" class="avatar">
+        <div>
+            <h1>Login Form</h1>
+             <form action="{% url 'login' %}"  method="post">
+                 {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{error}}
+                </div>
+                {% endif %}
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="usr" class="nam1"> UserName </label>
+                    <input type="text" class="form-control nam2" id="usr" name="username" placeholder="Enter Your Username" required autofocus autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="pwd" class="nm3">Password</label>
+                    <input type="password" class="form-control nam2" id="pwd" name="password" placeholder="Enter Your Password" required autofocus>
+                </div>
+                <br>
+                <button class="btn btn-primary sub">Login</button>
+            </form>
+            <br>
+            <a href="{% url 'register' %}" style="text-decoration:none;"><button class="btn btn-warning ml-2 pl-2">New User,Create Account</button></a>
+            <a href="{% url 'forgotpassword' %}" style="text-decoration:none;"><button class="btn btn-danger ml-5 subs">Forgot Password</button></a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var username = document.getElementById("usr");
+        var password = document.getElementById("pwd");
+
+        function validate(){
+            if(username.value.trim()==""){
+                alert("Please Enter Your Username");
+                return false;
+            }
+            else if(password.value.trim()==""){
+                alert("Please Enter Your Password");
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <title>Register</title>
+</head>
+<body style="background-image: url({% static 'images/lapi.jpg' %});background-size: cover;background-repeat: no-repeat;background-position:center;background-attachment: fixed;">
+    <div class="login-box">
+        <img src="{% static 'images/428-4287240_no-avatar-user-circle-icon-png.png' %}" alt="" class="avatar">
+        <div>
+            <h1>Registration Form</h1>
+            <form action="{% url 'register' %}"  method="post">
+                 {% if message %}
+            <div class="alert {{status}}" role="alert">{{message}}</div>
+            {% endif %}
+             {% csrf_token %}
+                <div class="form-group">
+                    <label for="usr" class="nam1"> UserName </label>
+                    <input type="text" class="form-control nam2" id="usr" name="username" placeholder="Enter Your Username" required autofocus autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="email" class="nm3">Email:</label>
+                    <input type="email" class="form-control nam2" id="email" placeholder="Enter email" name="email" required autofocus autocomplete="email">
+                </div> 
+                <div class="form-group">
+                    <label for="pwd" class="nm3">Password</label>
+                    <input type="password" class="form-control nam2" id="pwd1" name="password1" placeholder="Enter Your Password" required autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="pwd" class="nm3">Confirm password</label>
+                    <input type="password" class="form-control nam2" id="pwd2" name="password2" placeholder="Confirm  Password" required autofocus>
+                </div>
+                <br>
+                <div class="checkbox nm3">
+                    <label><input type="checkbox" name="remember" checked> I agree to the terms and Conditions</label>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary sub">Register</button><br><br>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

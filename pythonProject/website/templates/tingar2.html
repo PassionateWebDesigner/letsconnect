@@ -1,0 +1,38 @@
+{% extends 'tinagr 1.html' %}
+{% load static %}
+{% block content %}
+<h2 class="text-center">To Know How To Use The Website Check Here</h2>
+    <br>
+    <div class="container text-center">
+        <button type="button" class="btn btn-primary btn-lg float-left" data-toggle="collapse" data-target="#demo"><img src="{% static 'images/HowToLogins.png' %}" alt="" width="120" style="border-radius: 100%;">
+          <div class="login">
+            <h4>Click me to know</h4>
+          </div>
+        </button>
+        <div id="demo" class="collapse">
+            <h4 class="text-center">First Create an Account and then login into the website using your registered username & password, then you can available to create meetings or chat with the person you wished for!!</h4>
+        </div>
+        <br><br>
+        <button type="button" class="btn btn-warning btn-lg float-right bt" data-toggle="collapse" data-target="#demo1"><img src="{% static 'images/HowToLogin.png' %}" alt="" width="120" style="border-radius: 100%;">
+          <div class="create">
+            <h4>Click me to know</h4>
+          </div>
+        </button>
+        <div id="demo1" class="collapse">
+            <h4 class="text-center">At The Home Page Of Our Website You Can able to see the button of Register,in that you have to create your Account after that you can login!!</h4>
+        </div>
+        <br><br><br>
+        <button type="button" class="btn btn-success btn-lg bt" data-toggle="collapse" data-target="#demo2"><img src="{% static 'images/HowTocreate.png' %}" alt="" width="120" style="border-radius:100%;">
+          <div class="createmeet">
+            <h4>Click me to know</h4>
+          </div>
+        </button>
+        <div id="demo2" class="collapse">
+            <h4 class="text-center">At The Home Page Of Our Website You Can able to see the button of Join A connection,if you've the code you can join into it otherwise you can create a room</h4>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+

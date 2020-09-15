@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "EB Garamond";
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    overflow-x: hidden;
+}
+.logo{
+    border-radius: 50%;
+}
+ul li a{
+    color: black;
+    font-weight: bold;
+}
+ul li a:hover{
+    color: #6517dd;
+}
+.nav-item{
+    padding-left:30px;
+    font-size:22px;
+}
+#user{
+    margin-left: 420px;
+}
+#user a{
+    font-size: 18px;
+}
+.logout{
+    margin-left: 50px;
+    font-size:18px;
+}
+video{
+    margin-left: 50px;
+    width: 550px;
+    height: 420px;
+}
+h2{
+    margin-top:-350px;
+    margin-left:600px;
+    font-weight:bold;
+}
+h4{
+    float:right;
+    margin-top: 20px;
+    margin-right: 140px;
+    font-weight: bold;
+}
+.join{
+    float:right;
+    margin-top: 70px;
+    margin-right: -350px;
+    font-size:22px;
+}
+.create{
+    float:right;
+    margin-top: 70px;
+    font-size:22px;
+    margin-right: -50px;
+}
+@media (max-width:768px){
+    #user{
+        margin-left: 0;
+    }
+    .logout{
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    video{
+        width: 320px;
+        height: 320px;
+        margin-left: 0;
+    }
+    h2{
+        margin-top: 0;
+    }
+    h4{
+        margin-right: 0;
+        margin-left: 40px;
+    }
+    .join{
+        margin-top: 30px;
+        margin-right: 60px;
+    }
+    .create{
+        margin-right: 50px;
+        margin-top: 20px;
+    }
+}
+@media only screen and (min-width:375px) and (max-width:679px){
+    video{
+        margin-left: 30px;
+    }
+    .join{
+        margin-top: 30px;
+        margin-right: 80px;
+    }
+    .create{
+        margin-right: 70px;
+        margin-top: 20px;
+
+    }
+}
+@media only screen and (min-width:425px) and (max-width:679px){
+    video{
+        margin-left: 30px;
+    }
+    .join{
+        margin-top: 30px;
+        margin-right: 120px;
+    }
+    .create{
+        margin-right: 110px;
+        margin-top: 20px;
+
+    }
+}

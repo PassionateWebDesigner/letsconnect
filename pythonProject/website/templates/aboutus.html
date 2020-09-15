@@ -1,0 +1,321 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>About Us</title>
+    <link rel="stylesheet" href="{% static 'css/aboutus.css' %}">
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm">
+    <a href="{% url 'home' %}" class="navbar-brand"><img src="{% static 'images/Lets.png' %}" alt="" width="150" height="150" class="img-fluid logo"></a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+      <span class="fa fa-bars " style="float: right;"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapse_target">
+        <ul class="navbar-nav">
+            {% if user.is_authenticated %}
+             <li class="nav-item">
+              <a href="{% url 'hom3' %}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+            <a href="{% url 'aboutus' %}" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'faq' %}" class="nav-link">FAQ's</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'contactus' %}" class="nav-link">Contact Us</a>
+          </li>
+            <li class="nav-item" id="user">
+                <a href="{% url 'profilephotoupload' %}" role="button" class="btn btn-primary text-white" class="prof"><span class="fa fa-user"></span> View Profile</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'logout' %}" role="button" class="btn btn-warning text-white logout"><span class="fa fa-sign-out"></span> Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+            <a href="{% url 'home' %}" class="nav-link">Getting Started</a>
+             </li>
+          <li class="nav-item">
+            <a href="{% url 'aboutus' %}" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'faq' %}" class="nav-link">FAQ's</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'contactus' %}" class="nav-link">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'register' %}" class="btn btn-warning register">Register</a>
+          </li>
+          <br>
+          <li class="nav-item">
+            <a href="{% url 'login' %}" class="btn btn-success login">Login</a>
+          </li>
+            {% endif %}
+        </ul>
+      </div>
+  </nav>
+
+  <div class="main">
+    <div class="text-block">
+      <h4>Are You Miles Away To Your Loved One's</h4>
+      <h5>Connect To Them By A Click!!</h5>
+    </div>
+    <img onmouseover="setnewImage()" onmouseout="setoldImage()" src="{% static 'images/grandpa.jpg' %}" alt="responsive image"  class="img-fluid img-responsive mx-auto d-block" id="img1">
+  </div>
+  <br><br><br>
+    <section>
+      <h3 class="text-center text3 slide-in from-left">Let's Connect Is An Online Video Conferencing Platform To Connect With The People</h3>
+      <br><br>
+      <div>
+        <p class="text-secondary text text-break d-inline-block text-lg-left slide-in from-right" >Let's Connect is a platform mainly created for the students based who are missing there friends in a pandemic situations like <b>COVID</b><br>
+         these will help them to connect with their friends through online and make them feel connected with everyone even they are not at same place.
+        </p>
+      </div>
+      <br>
+      <div class="text-secondary d-inline-block text-break text text-lg-left fade-in">
+        <p>This website main intention is to connect  with the family and friends. </p>
+      </div>
+      <br>
+      <div class="text-secondary text text-break text-lg-left d-inline-block slide-in from-left">
+        <p>This website will be useful for a person to connect with the persons and <br> held the meetings as well and also for talking and enjoying the life,this will make the people feel good. </p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-center">Our Team</h2>
+      <br><br><br>
+      <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card card-flip h-100">
+                    <div class="card-front text-white bg-dark">
+                        <div class="card-body">
+                            <img src="{% static 'images/mouni.jpg' %}" alt="" class="imgs">
+                            &nbsp;&nbsp;
+                            <h3 class="card-title text-center">Mounika</h3>
+                        </div>
+                    </div>
+                    <div class="card-back bg-white">
+                        <div class="card-body">
+                          <h3 class="card-title text-center mt-5 font-weight-bold">Mounika</h3>
+                          <p class="card-text text-center font-weight-bold">Contributed Front End Work</p>
+                          <div class="text-center mt-2">
+                            <a href="#" class="text-primary"><span class="fa fa-instagram pl-2 fas"></span></a>
+                            <a href="#" class="text-primary"><span class="fa fa-linkedin pl-2 fas"></span></a>
+                            <a href="#" class="text-primary"><span class="fa fa-twitter pl-2 fas"></span></a>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card-flip h-70">
+                    <div class="card-front text-white bg-warning">
+                        <div class="card-body">
+                            <img src="{% static 'images/sai (2).jpg' %}" alt="" class="imgs">
+                            &nbsp;&nbsp;
+                            <h3 class="card-title text-center">Sai Vardhan</h3>
+                        </div>
+                    </div>
+                    <div class="card-back bg-dark text-white">
+                        <div class="card-body">
+                            <h3 class="card-title text-center mt-5">Sai Vardhan</h3>
+                            <p class="card-text text-center mt-3">Btech Final Year,Contributed Backend Work</p>
+                            <div class="text-center mt-2">
+                              <a href="#" class="text-white"><span class="fa fa-instagram pl-2 fas"></span></a>
+                              <a href="#" class="text-white"><span class="fa fa-linkedin pl-2 fas"></span></a>
+                              <a href="#" class="text-white"><span class="fa fa-twitter pl-2 fas"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card-flip h-70">
+                    <div class="card-front text-white bg-primary">
+                        <div class="card-body">
+                            <img src="{% static 'images/lalli.jpg' %}" alt="" class="imgs">
+                            &nbsp;&nbsp;
+                            <h3 class="card-title text-center">Lalithamma</h3>
+                        </div>
+                    </div>
+                    <div class="card-back bg-white">
+                        <div class="card-body text-primary">
+                            <h3 class="card-title mt-5 text-center font-weight-bold">Lalithamma</h3>
+                            <p class="card-text text-center">Btech Cse ,Contributed Back End Work</p>
+                            <div class="text-center mt-2">
+                              <a href="#" class="text-warning"><span class="fa fa-instagram pl-2 fas"></span></a>
+                              <a href="#" class="text-warning"><span class="fa fa-linkedin pl-2 fas"></span></a>
+                              <a href="#" class="text-warning"><span class="fa fa-twitter pl-2 fas"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <br><br>
+     <footer class="footer-area footer--light">
+      <div class="footer-big">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+              <div class="footer-widget">
+                <div class="widget-about">
+                  <a href="home.html"><img src="{% static 'images/Lets.png' %}" alt="" class="img-fluid rounded-circle" width="230" height="230"></a>
+                  <p>Let's Connect</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="footer-widget">
+                <div class="footer-menu footer-menu--1">
+                  <h4 class="head">Quick Links</h4>
+                  <br>
+                  <ul>
+                    <li><a href="{% url 'home' %}">Getting Started</a></li><br>
+                    <li><a href="{% url 'aboutus' %}">About Us</a></li><br>
+                    <li><a href="{% url 'faq' %}">FAQ's</a></li><br>
+                    <li><a href="{% url 'contactus' %}">Contact Us</a></li><br>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <h3 class="head">Contact Us on:</h3>
+                <span class="fa fa-phone">&nbsp;<a href="tel: 0000000000" style="text-decoration:none;"><span id="a">Customer Service</span></a></span><br>
+              <span class="fa fa-envelope"> <a href="mailto:quicklearner838@gmail.com" style=text-decoration:none;><span id="a">quicklearner838@gmail.com</a></span>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="social-icons">
+                <h3 class="head">Follow Us </h3>
+                <a><span class="fa fa-instagram"></span></a>&nbsp;
+                <a><span class="fa fa-linkedin"></span></a>&nbsp;
+                <a><span class="fa fa-facebook"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const faders = document.querySelectorAll(".fade-in");
+      const sliders = document.querySelectorAll(".slide-in")
+      const appearOptions = {
+        threshold : 0,
+        rootMargin : "0px 0px -250px 0px"
+      };
+      const appearonscroll=new IntersectionObserver(function
+      (entries,appearonscroll){
+        entries.forEach(entry =>{
+          if(!entry.isIntersecting){
+            return;
+          }else{
+            entry.target.classList.add("appear");
+            appearonscroll.unobserve(entry.target);
+          }
+        })
+      },appearOptions);
+
+      faders.forEach(fader => {
+        appearonscroll.observe(fader);
+      })
+
+      sliders.forEach(slider =>{
+        appearonscroll.observe(slider);
+      })
+      
+      function setnewImage(){
+        document.getElementById("img1").src="{% static 'images/fam.jpg' %}";
+      }
+      function setoldImage(){
+        document.getElementById("img1").src="{% static 'images/grandpa.jpg' %}";
+      }
+    </script>
+</body>
+</html>
+<!--<section>
+      <h2 class="text-center">Our Team</h2>
+      <br><br><br>
+      <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card card-flip h-100">
+                    <div class="card-front text-white bg-dark">
+                        <div class="card-body">
+                            <img src="images/mouni.jpg" alt="" width="300" height="280">
+                            &nbsp;&nbsp;
+                            <h3 class="card-title text-center">Mounika</h3>
+                        </div>
+                    </div>
+                    <div class="card-back bg-white">
+                        <div class="card-body">
+                            <h3 class="card-title">Back</h3>
+                            <p class="card-text">Suprise this one has more more more more content on the back!</p>
+                            <a href="#" class="btn btn-outline-secondary">Action</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card-flip h-100">
+                    <div class="card-front text-white bg-warning">
+                        <div class="card-body">
+                            <img src="images/sai.jpg" alt="" width="300" height="280">
+                            &nbsp;&nbsp;
+                            <h3 class="card-title text-center">Sai Vardhan</h3>
+                        </div>
+                    </div>
+                    <div class="card-back bg-dark text-white">
+                        <div class="card-body">
+                            <h3 class="card-title">Back #2</h3>
+                            <p class="card-text">Suprise this one has content on the back!</p>
+                            <a href="#" class="btn btn-outline-secondary">Action</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card-flip h-100">
+                    <div class="card-front text-white bg-primary">
+                        <div class="card-body">
+                            <img src="images/lalli.jpg" alt="" width="300" height="280">
+                            &nbsp;&nbsp;
+                            <h3 class="card-title text-center">Lalithamma</h3>
+                        </div>
+                    </div>
+                    <div class="card-back bg-white">
+                        <div class="card-body text-primary">
+                            <h3 class="card-title">Wow! #3</h3>
+                            <p class="card-text">Suprise this one has content on the back!</p>
+                            <a href="#" class="btn btn-outline-primary">Action</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br> <br><br>
+    </section>
+    <section id="footer" class="section1">
+      <div class="container">
+        <div class="row text-center text-xs-center text-sm-left text-md-left">
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <h5>Quick links</h5>
+            <ul class="list-unstyled quick-links">
+              <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Home</a></li>
+              <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>About</a></li>
+              <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+              <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
+              <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Videos</a></li>
+            </ul>
+          </div>-->
